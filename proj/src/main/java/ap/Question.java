@@ -1,7 +1,7 @@
-package java.ap;
+package ap;
 
 import java.util.*;
-import java.ap.exception.*;
+import ap.exception.*;
 
 public  class Question{
 	public Question(String body, List<String> choices, int correctChoice, 

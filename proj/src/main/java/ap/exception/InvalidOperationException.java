@@ -1,4 +1,4 @@
-package java.ap.exception;
+package ap.exception;
 
 public class InvalidOperationException extends Exception{
 	
