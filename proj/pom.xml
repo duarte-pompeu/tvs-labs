@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>tvs.testng</groupId>
-    <artifactId>sample-testng</artifactId>
+    <groupId>tvs.g14</groupId>
+    <artifactId>atg</artifactId>
     <version>1</version>
-    <name>sample-testng</name>
+    <name>atg</name>
     <dependencies>
         <!-- Dependency libraries to include for compilation -->
         <dependency>
