@@ -7,7 +7,7 @@ import ap.exception.*;
 public class TestQuestion {
 	
 	@Test
-	public void choiceLengthOnMinBoundary() {
+	public void choiceLengthOnMinBoundary() throws InvalidOperationException {
 		List<String> choices = new ArrayList<String>();
 		choices.add("Luis de Camoes");
 		choices.add("Fernando Pessoa");
@@ -17,8 +17,8 @@ public class TestQuestion {
 		assertEquals(question.getSubjects().get(0), "Portugues");
 		assertEquals(question.getSubjects().size(), 1);
 		assertEquals(question.getWeight(), 20);
-		assertEquals(question.grade(1), 20);
-		assertEquals(question.grade(2), -20);
+		assertEquals(question.grade(1), 20.0f);
+		assertEquals(question.grade(2), -20.0f);
 	}
 
 	@Test
