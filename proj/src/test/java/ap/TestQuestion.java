@@ -24,13 +24,15 @@ public class TestQuestion {
 	@Test
 	public void choiceLengthOffMinBoundary() {
 		List<String> choices = new ArrayList<String>();
-		choices.add("Luis de Camoes");
-		choices.add("Fernando Pessoa");
+		choices.add("4");
+		Question question = null;
 
-		/*try {
-			Question question = new Question("Quem escreveu os Lusiadas", choices, 1, "Portugues", 20);
+		try {
+			question = new Question("Quanto e 2 + 2", choices, 1, "Matematica", 20);
 			fail();
-		} catch (InvalidOperationException e)*/
+		} catch (InvalidOperationException e) {
+			assertEquals(question, null);
+		}
 	}
 
 	@Test
