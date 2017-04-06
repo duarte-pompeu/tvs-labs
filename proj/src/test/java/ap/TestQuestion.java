@@ -31,7 +31,7 @@ public class TestQuestion {
 			question = new Question("Quanto e 2 + 2", choices, 1, "Matematica", 20);
 			fail();
 		} catch (InvalidOperationException e) {
-
+			// success
 		}
 	}
 
@@ -84,7 +84,7 @@ public class TestQuestion {
 			question = new Question("Vais partir", choices, 8, "Cultura", 17);
 			fail();
 		} catch (InvalidOperationException e) {
-			
+			// success
 		}
 	}
 
@@ -116,7 +116,7 @@ public class TestQuestion {
 			question = new Question("Doo?", choices, 0, "Yabba", 15);
 			fail();
 		} catch (InvalidOperationException e) {
-
+			// success
 		}
 	}
 }
