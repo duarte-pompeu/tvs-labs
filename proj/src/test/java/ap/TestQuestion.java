@@ -36,8 +36,32 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testChoiceLengthOnMaxBoundary() {
+	public void testChoiceLengthOnMaxBoundary() throws InvalidOperationException {
+		List<String> choices = new ArrayList<String>();
+		choices.add("A");
+		choices.add("B");
+		choices.add("C");
+		choices.add("D");
+		choices.add("E");
+		choices.add("F");
+		choices.add("10");
+		choices.add("11");
+		choices.add("12");
+		choices.add("13");
 
+		Question question = new Question("Converta para hex: 12", choices, 3, "Informatica", 1);
+
+		question.setWeight(18);
+		question.add("Matematica");
+		question.add("Cenas");
+
+		assertEquals(question.getWeight(), 18);
+		assertEquals(question.getSubjects().size(), 3);
+		assertEquals(question.grade(8), -2.0f);
+		assertEquals(question.grade(3), 18.0f);
+		assertEquals(question.getSubjects().get(2), "Cenas");
+		assertEquals(question.getSubjects().get(0), "Informatica");
+		assertEquals(question.getSubjects().get(1), "Matematica");
 	}
 
 	@Test
