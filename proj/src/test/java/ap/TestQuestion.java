@@ -91,12 +91,37 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testCorrectChoiceOnMinBoundary() {
+	public void testCorrectChoiceOnMinBoundary() throws InvalidOperationException {
+		List<String> choices = new ArrayList<String>();
+		choices.add("Vinte");
+		choices.add("Dezanove");
 
+		Question question = new Question("Nota do grupo 14", choices, 1, "Psicologia", 20);
+
+		question.setWeight(16);
+
+		assertEquals(question.grade(1), 16.0f);
+		assertEquals(question.getWeight(), 16);
+		assertEquals(question.getSubjects().get(0), "Psicologia");
+		assertEquals(question.grade(2), -16.0f);
+		assertEquals(question.getSubjects().size(), 1);
 	}
 
 	@Test
 	public void testCorrectChoiceOffMinBoundary() {
+		List<String> choices = new ArrayList<String>();
+		choices.add("Scooby");
+		choices.add("Dooby");
+		Question question = null;
 
+		try {
+			question = new Question("Doo?", choices, 0, "Yabba", 15);
+			question.add("Dabba");		// keep
+			question.setWeight(15);		// this
+			question.add("Doo");		// here?
+			fail();
+		} catch (InvalidOperationException e) {
+			assertEquals(question, null);
+		}
 	}
 }
