@@ -7,7 +7,7 @@ import ap.exception.*;
 public class TestQuestion {
 	
 	@Test
-	public void testChoiceLengthOnMinBoundary() throws InvalidOperationException {
+	public void testQuestion1() throws InvalidOperationException {
 		List<String> choices = new ArrayList<String>();
 		choices.add("Luis de Camoes");
 		choices.add("Fernando Pessoa");
@@ -22,7 +22,7 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testChoiceLengthOffMinBoundary() {
+	public void testQuestion2() {
 		List<String> choices = new ArrayList<String>();
 		choices.add("4");
 		Question question = null;
@@ -37,7 +37,7 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testChoiceLengthOnMaxBoundary() throws InvalidOperationException {
+	public void testQuestion3() throws InvalidOperationException {
 		List<String> choices = new ArrayList<String>();
 		choices.add("A");
 		choices.add("B");
@@ -66,7 +66,7 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testChoiceLengthOffMaxBoundary() {
+	public void testQuestion4() {
 		List<String> choices = new ArrayList<String>();
 		choices.add("Vais");
 		choices.add("partir");
@@ -91,7 +91,7 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testCorrectChoiceOnMinBoundary() throws InvalidOperationException {
+	public void testQuestion5() throws InvalidOperationException {
 		List<String> choices = new ArrayList<String>();
 		choices.add("Vinte");
 		choices.add("Dezanove");
@@ -108,7 +108,7 @@ public class TestQuestion {
 	}
 
 	@Test
-	public void testCorrectChoiceOffMinBoundary() {
+	public void testQuestion6() {
 		List<String> choices = new ArrayList<String>();
 		choices.add("Scooby");
 		choices.add("Dooby");
