@@ -29,6 +29,7 @@ public class TestQuestion {
 
 		try {
 			question = new Question("Quanto e 2 + 2", choices, 1, "Matematica", 20);
+			question.add("Adivinhas");		// manter isto aqui para estar de acordo com o test case?
 			fail();
 		} catch (InvalidOperationException e) {
 			assertEquals(question, null);
@@ -66,7 +67,27 @@ public class TestQuestion {
 
 	@Test
 	public void testChoiceLengthOffMaxBoundary() {
+		List<String> choices = new ArrayList<String>();
+		choices.add("Vais");
+		choices.add("partir");
+		choices.add("naquela");
+		choices.add("estrada");
+		choices.add("onde");
+		choices.add("um");
+		choices.add("dia");
+		choices.add("chegaste");
+		choices.add("a");
+		choices.add("sorrir");
+		choices.add("Clemente");
+		Question question = null;
 
+		try {
+			question = new Question("Vais partir", choices, 8, "Cultura", 17);
+			question.add("Musica");		// manter isto aqui para estar de acordo com o test case?
+			fail();
+		} catch (InvalidOperationException e) {
+			assertEquals(question, null);
+		}
 	}
 
 	@Test
