@@ -29,10 +29,9 @@ public class TestQuestion {
 
 		try {
 			question = new Question("Quanto e 2 + 2", choices, 1, "Matematica", 20);
-			question.add("Adivinhas");		// manter isto aqui para estar de acordo com o test case?
 			fail();
 		} catch (InvalidOperationException e) {
-			assertEquals(question, null);
+
 		}
 	}
 
@@ -83,10 +82,9 @@ public class TestQuestion {
 
 		try {
 			question = new Question("Vais partir", choices, 8, "Cultura", 17);
-			question.add("Musica");		// manter isto aqui para estar de acordo com o test case?
 			fail();
 		} catch (InvalidOperationException e) {
-			assertEquals(question, null);
+			
 		}
 	}
 
@@ -116,12 +114,9 @@ public class TestQuestion {
 
 		try {
 			question = new Question("Doo?", choices, 0, "Yabba", 15);
-			question.add("Dabba");		// keep
-			question.setWeight(15);		// this
-			question.add("Doo");		// here?
 			fail();
 		} catch (InvalidOperationException e) {
-			assertEquals(question, null);
+
 		}
 	}
 }
