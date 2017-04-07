@@ -14,8 +14,11 @@ public class TestQuestion {
 
 		Question question = new Question("Quem escreveu os Lusiadas", choices, 1, "Portugues", 20);
 
+		question.add("Cultura");
+
 		assertEquals(question.getSubjects().get(0), "Portugues");
-		assertEquals(question.getSubjects().size(), 1);
+		assertEquals(question.getSubjects().get(1), "Cultura");
+		assertEquals(question.getSubjects().size(), 2);
 		assertEquals(question.getWeight(), 20);
 		assertEquals(question.grade(1), 20.0f);
 		assertEquals(question.grade(2), -20.0f);
@@ -96,13 +99,15 @@ public class TestQuestion {
 
 		Question question = new Question("Nota do grupo 14", choices, 1, "Psicologia", 20);
 
+		question.add("TVS");
 		question.setWeight(16);
 
 		assertEquals(question.grade(1), 16.0f);
 		assertEquals(question.getWeight(), 16);
 		assertEquals(question.getSubjects().get(0), "Psicologia");
 		assertEquals(question.grade(2), -16.0f);
-		assertEquals(question.getSubjects().size(), 1);
+		assertEquals(question.getSubjects().size(), 2);
+		assertEquals(question.getSubjects().get(1), "TVS");
 	}
 
 	@Test
